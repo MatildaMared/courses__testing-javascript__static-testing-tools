@@ -4,19 +4,24 @@
 	"author": "Kent C. Dodds (http://kentcdodds.com/)",
 	"license": "GPLv3",
 	"scripts": {
-		"build": "babel src --out-dir dist",
-		"lint": "eslint .",
-		"prettier": "prettier --write \"**/*.+(js|json)\"",
+		"build": "babel src --extensions .js,.ts,.tsx --out-dir dist",
+		"lint": "eslint --ext .js,.ts,.tsx .",
+		"prettier": "prettier --write \"**/*.+(js|json|ts|tsx)\"",
 		"format": "npm run prettier -- --write",
-		"validate": "npm run check-format && npm run lint && npm run build",
-		"check-format": "npm run prettier -- --list-different"
+		"validate": "npm run check-types && npm run check-format && npm run lint && npm run build",
+		"check-format": "npm run prettier -- --list-different",
+		"check-types": "tsc"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.7.0",
 		"@babel/core": "^7.7.2",
 		"@babel/preset-env": "^7.7.1",
+		"@babel/preset-typescript": "^7.18.6",
+		"@typescript-eslint/eslint-plugin": "^5.48.1",
+		"@typescript-eslint/parser": "^5.48.1",
 		"eslint": "^8.32.0",
 		"eslint-config-prettier": "^8.6.0",
-		"prettier": "^2.8.3"
+		"prettier": "^2.8.3",
+		"typescript": "^4.9.4"
 	}
 }
