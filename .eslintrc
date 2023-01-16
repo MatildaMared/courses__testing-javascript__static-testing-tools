@@ -6,12 +6,8 @@
 			"jsx": true
 		}
 	},
+	"extends": ["eslint:recommended"],
 	"rules": {
-		"valid-typeof": "error",
-		"no-undef": "error",
-		"no-unused-vars": "error",
-		"no-unsafe-negation": "error",
-		"no-unexpected-multiline": "error",
 		"strict": ["error", "never"]
 	},
 	"env": {
